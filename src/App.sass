@@ -4,11 +4,13 @@ $font: 'Hanken Grotesk',sans-serif
 $pink: #f9cdcd
 $dark: #252422
 $light: #f4f4f4
+$backgroundColor: $light
+$textColor: $dark
 $page-padding: 0px 5%
 
 body
-    background-color: $light
-    color: $dark
+    background-color: $backgroundColor
+    color: $textColor
     font-family: $font
 
 a
@@ -19,4 +21,21 @@ a
     font-weight: 550
     line-height: 80%
 
-    
+#accessibility-button
+    width: 50px
+    height: 50px
+    border-radius: 50%
+    position: fixed
+    bottom: 5%
+    left: 5%
+    background-color: $textColor
+    color: $backgroundColor
+    border: none
+
+#accessibility-button:hover
+    animation: scaleUp 200ms ease-in-out 0s 1 forwards
+
+@keyframes scaleUp 
+    100%
+        transform: scale(1.2)
+
