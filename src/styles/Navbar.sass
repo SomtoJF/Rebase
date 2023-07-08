@@ -1,0 +1,41 @@
+#logo
+    font-weight: 900
+    font-size: 1.8rem
+    letter-spacing: -2.1px
+    transform: scale(1, .9)
+    cursor: pointer
+
+nav
+    display: flex
+    justify-content: space-between
+    padding: 2% 5%
+
+    ul
+        display: flex
+        justify-content: space-between
+        align-items: center
+        width: fit-content 
+        list-style-type: none
+        gap: 3vw
+        font-weight: 400
+        font-size: 0.8rem
+
+    li
+        cursor: pointer
+    li:hover
+        text-decoration: underline
+
+    div
+        display: flex
+        justify-items: center
+        align-items: center
+        cursor: pointer
+
+        svg:hover
+            animation: scale 200ms ease-in-out 0s 1 forwards
+
+@keyframes scale
+    to
+        transform: scale(1.2, 1.1)
+    from
+            
