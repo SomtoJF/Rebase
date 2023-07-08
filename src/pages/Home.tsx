@@ -20,6 +20,20 @@ export default function Home() {
 					TO IGNORE.
 				</p>
 			</header>
+			<main id="our-jobs">
+				<nav>
+					<p>
+						The work we create lives at the intersection of clarity and surprise
+						and positions brands in culture through shared values and ideals.
+					</p>
+					<div>
+						<button>SERVICES</button>
+						<button>INDUSTRIES</button>
+						<button>ALL WORK</button>
+					</div>
+				</nav>
+				<hr style={{ marginTop: "30px" }} />
+			</main>
 		</section>
 	);
 }

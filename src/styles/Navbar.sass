@@ -1,3 +1,5 @@
+@use '../App'
+    
 #logo
     font-weight: 900
     font-size: 1.8rem
@@ -23,12 +25,20 @@ nav
 
         li
             cursor: pointer
+            display: inline-block
+            position: relative
+
             a
                 text-decoration: none
             a.active
-                text-decoration: underline
-        li:hover
-            text-decoration: underline
+                border-bottom: solid App.$textColor 1px
+
+        li::after 
+            @include App.underlineAnim
+
+
+        li:hover::after 
+          @include App.underlineAnimHover
 
     div
         display: flex

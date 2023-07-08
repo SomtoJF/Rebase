@@ -2,3 +2,40 @@
 
 #home-page
     padding: App.$page-padding
+
+#our-jobs
+    nav
+        padding: 0px
+        display: flex
+        flex-direction: row-reverse
+        justify-content: space-between
+        align-items: center
+
+        p
+            width: 30vw
+
+        div
+            align-self: flex-end
+            width: max(300px, 25vw)
+            display: flex
+            justify-content: space-between
+        
+            button
+                width: fit-content
+                background-color: inherit
+                border: none
+                font-size: 15px
+
+
+@media all and (max-width: 830px) 
+    #our-jobs > nav
+        flex-direction: column
+        align-items: flex-start
+
+        p
+            margin-bottom: 10vh
+            width: max(300px, 50vw)
+
+        div
+            align-self: flex-start
+                

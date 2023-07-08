@@ -8,10 +8,30 @@ $backgroundColor: $light
 $textColor: $dark
 $page-padding: 0px 5%
 
+@mixin underlineAnim($color: $textColor)
+    content: ''
+    position: absolute
+    width: 100%
+    transform: scaleX(0)
+    height: 1px
+    bottom: 0
+    left: 0
+    background-color: $textColor
+    transform-origin: bottom right
+    transition: transform 0.25s ease-out
+
+@mixin underlineAnimHover()
+    transform: scaleX(1)
+    transform-origin: bottom left
+
+:root
+    font-size: 18px
+
 body
     background-color: $backgroundColor
     color: $textColor
     font-family: $font
+
 
 a
     color: inherit
