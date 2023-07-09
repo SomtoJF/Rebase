@@ -1,6 +1,5 @@
-import React from "react";
 import ClientCard from "./ClientCard";
-import { ServicesType, Services } from "../Types/Home";
+import { ServicesType } from "../Types/Home";
 import "../styles/Services.sass";
 
 type props = {

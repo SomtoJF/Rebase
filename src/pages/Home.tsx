@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "../styles/Home.sass";
 import { Services } from "../Types/Home";
 import OurJobsComponent from "../components/Services";
