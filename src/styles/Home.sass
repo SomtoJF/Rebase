@@ -4,7 +4,7 @@
     padding: App.$page-padding
 
 #our-jobs
-    nav
+    #job-summary
         padding: 0px
         display: flex
         flex-direction: row-reverse
@@ -25,10 +25,19 @@
                 background-color: inherit
                 border: none
                 font-size: 15px
+                display: inline-block
+                position: relative
+
+            button::after
+                @include App.underlineAnim
+
+            button:hover::after
+                @include App.underlineAnimHover
+                
 
 
 @media all and (max-width: 830px) 
-    #our-jobs > nav
+    #our-jobs > #job-summary
         flex-direction: column
         align-items: flex-start
 

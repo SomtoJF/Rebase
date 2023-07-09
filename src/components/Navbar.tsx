@@ -26,7 +26,7 @@ export default function Navbar() {
 			<div id="logo">BASIC/DEPT</div>
 			<ul>
 				{Object.keys(links).map((link, index) => (
-					<li>
+					<li key={index + 0.323}>
 						<NavLink
 							to={Object.values(links)[index]}
 							className={({ isActive, isPending }) =>

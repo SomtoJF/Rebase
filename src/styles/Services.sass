@@ -1,0 +1,48 @@
+@use '../App'
+#our-jobs
+    .job-section
+        height: 70vh
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr
+        grid-template-rows: 1fr
+        justify-content: space-between
+        margin-top: 30px
+        border-top: solid 1px App.$textColor
+        padding-top: 15px
+
+.item-number-container
+    display: flex
+    justify-content: space-between
+    padding-right: 5%
+
+.client-card
+    height: 100%
+    overflow: hidden
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    cursor: pointer
+
+    figure
+        height: 80%
+        overflow: hidden
+
+        img
+            width: 100%
+            transform: scale(1)
+            transition: 200ms
+
+    div
+        padding: 0px 5%
+
+.client-card:nth-child(2)
+    border-left: solid 1px App.$textColor
+
+.client-card:hover figure img
+    transform: scale(1.1)
+
+.client-card:hover .info-name
+    text-decoration: underline
+
+
+        

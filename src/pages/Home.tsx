@@ -1,6 +1,14 @@
+import React, { useState } from "react";
 import "../styles/Home.sass";
+import { Services } from "../Types/Home";
+import OurJobsComponent from "../components/Services";
 
 export default function Home() {
+	const [displayedJob, setDisplayedJob] = useState(Services);
+	const displayServices = () => {
+		setDisplayedJob(Services);
+	};
+
 	return (
 		<section id="home-page">
 			<header>
@@ -9,8 +17,8 @@ export default function Home() {
 					<div
 						style={{
 							backgroundColor: "#252422",
-							height: "4rem",
-							width: "4rem",
+							height: "max(38px, 4vw)",
+							width: "max(38px, 4vw)",
 							borderRadius: "100%",
 							display: "inline-block",
 						}}
@@ -21,18 +29,18 @@ export default function Home() {
 				</p>
 			</header>
 			<main id="our-jobs">
-				<nav>
+				<section id="job-summary">
 					<p>
 						The work we create lives at the intersection of clarity and surprise
 						and positions brands in culture through shared values and ideals.
 					</p>
 					<div>
-						<button>SERVICES</button>
+						<button onClick={displayServices}>SERVICES</button>
 						<button>INDUSTRIES</button>
 						<button>ALL WORK</button>
 					</div>
-				</nav>
-				<hr style={{ marginTop: "30px" }} />
+				</section>
+				<OurJobsComponent data={displayedJob} />
 			</main>
 		</section>
 	);
