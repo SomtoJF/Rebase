@@ -26,12 +26,40 @@
         font-weight: 500
 
     button
+        position: relative
         width: 150px
         height: 35px
         border-radius: 20px
         border: solid 1px App.$textColor
         font-size: 0.6rem
         font-weight: 500
+        outline: 0
+        overflow: hidden
+        background: none
+        transition: 0.08s ease-in
+        -o-transition: 0.08s ease-in
+        -ms-transition: 0.08s ease-in
+        -moz-transition: 0.08s ease-in
+        -webkit-transition: 0.08s ease-in
+
+    button:hover
+        color: App.$backgroundColor
+
+    button:before 
+        content: ""
+        position: absolute
+        background: App.$textColor
+        bottom: 0
+        left: 0
+        right: 0
+        top: 100%
+        z-index: -1
+        -webkit-transition: top 0.09s ease-in
+
+
+    button:hover:before 
+      top: 0
+
 
 .client-card
     box-sizing: border-box
