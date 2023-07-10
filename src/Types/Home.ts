@@ -12,6 +12,12 @@ type jobItem = {
 	image: string;
 };
 
+type clientGroup = {
+	name: string;
+	description: string;
+};
+
+type clientType = clientGroup[];
 type ServicesType = Record<string, jobItem[]>;
 
 const Services: ServicesType = {
@@ -70,5 +76,28 @@ const Services: ServicesType = {
 	],
 };
 
-export { Services };
-export type { ServicesType };
+const clientGroups: clientType = [
+	{
+		name: "websites + platforms",
+		description:
+			"We conceive and create experiences that immerse consumers in the brand through a combination of utility and creativity.",
+	},
+	{
+		name: "branded ecommerce",
+		description:
+			"We go beyond best practices and build best-in-class D2C channels that drive commerce, shape culture, and define categories.",
+	},
+	{
+		name: "branding + advertising",
+		description:
+			"We create identities, platforms, and activations that differentiate brands and position them to matter in culture.",
+	},
+	{
+		name: "Digital products + services",
+		description:
+			"We identify and create digital products and services that create revenue channels and help brands thrive in the new economy.",
+	},
+];
+
+export { Services, clientGroups };
+export type { ServicesType, clientType };

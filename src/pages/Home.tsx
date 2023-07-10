@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../styles/Home.sass";
-import { Services } from "../Types/Home";
+import { Services, clientGroups } from "../Types/Home";
 import OurJobsComponent from "../components/Services";
 
 export default function Home() {
@@ -40,7 +40,7 @@ export default function Home() {
 						<button>ALL WORK</button>
 					</div>
 				</section>
-				<OurJobsComponent data={displayedJob} />
+				<OurJobsComponent data={displayedJob} clientTypes={clientGroups} />
 			</main>
 		</section>
 	);
