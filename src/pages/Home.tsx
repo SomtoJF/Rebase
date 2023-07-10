@@ -2,6 +2,7 @@ import { useState } from "react";
 import "../styles/Home.sass";
 import { Services, clientGroups } from "../Types/Home";
 import OurJobsComponent from "../components/Services";
+import homeVid from "../assets/homevid.mp4";
 
 export default function Home() {
 	const [displayedJob, setDisplayedJob] = useState(Services);
@@ -12,11 +13,14 @@ export default function Home() {
 	return (
 		<section id="home-page">
 			<header>
-				<p className="mega-text">
+				<video autoPlay loop muted playsInline>
+					<source src={homeVid} type="video/mp4" />
+				</video>
+				<p className="mega-text" style={{ paddingLeft: "5vw" }}>
 					EASY TO <br /> UNDERSTAND. <br />
 					<div
 						style={{
-							backgroundColor: "#252422",
+							backgroundColor: "#f4f4f4",
 							height: "max(38px, 4vw)",
 							width: "max(38px, 4vw)",
 							borderRadius: "100%",
@@ -30,12 +34,13 @@ export default function Home() {
 			</header>
 			<main id="our-jobs">
 				<section id="job-summary">
-					<p>
-						The work we create lives at the intersection of clarity and surprise
-						and positions brands in culture through shared values and ideals.
+					<p style={{ marginTop: "-10%" }}>
+						We work to blur the lines between culture and fashion. Our work
+						stands in the forefront of the fashion industry as we strive to
+						demolish the boundary between what is called normal and not.
 					</p>
 					<div>
-						<button onClick={displayServices}>SERVICES</button>
+						<button onClick={displayServices}>COLLECTIONS</button>
 						<button>INDUSTRIES</button>
 						<button>ALL WORK</button>
 					</div>

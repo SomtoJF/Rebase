@@ -63,7 +63,7 @@ export default function Footer() {
 					</ul>
 					<ul>
 						<li>
-							<a href="#">San Diego - CA</a>
+							<a href="#">Lagos - NG</a>
 						</li>
 						<li>
 							<a href="#">New York - NY</a>
@@ -75,16 +75,16 @@ export default function Footer() {
 							<a href="#">St. Louis - MO</a>
 						</li>
 						<li>
-							<a href="#">Amsterdam - NL</a>
+							<a href="#">Cape Town - ZA</a>
 						</li>
 						<li>
 							<a href="#">London - EN</a>
 						</li>
 						<li>
-							<a href="#">Berlin - GE</a>
+							<a href="#">Stockholm - SE</a>
 						</li>
 						<li>
-							<a href="#">Argentina - AR</a>
+							<a href="#">Wien - AU</a>
 						</li>
 					</ul>
 				</div>

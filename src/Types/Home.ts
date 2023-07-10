@@ -78,17 +78,17 @@ const Services: ServicesType = {
 
 const clientGroups: clientType = [
 	{
-		name: "websites + platforms",
+		name: "SUMMER '23",
 		description:
 			"We conceive and create experiences that immerse consumers in the brand through a combination of utility and creativity.",
 	},
 	{
-		name: "branded ecommerce",
+		name: "outdoors+",
 		description:
 			"We go beyond best practices and build best-in-class D2C channels that drive commerce, shape culture, and define categories.",
 	},
 	{
-		name: "branding + advertising",
+		name: "the urban west",
 		description:
 			"We create identities, platforms, and activations that differentiate brands and position them to matter in culture.",
 	},

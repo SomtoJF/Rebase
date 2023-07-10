@@ -21,7 +21,7 @@ export default function OurJobsComponent({ data, clientTypes }: props) {
 						<div className="client-type">
 							<h2>{clientTypes[index].name.toUpperCase()}</h2>
 							<p>{clientTypes[index].description}</p>
-							<button type="button">LEARN MORE</button>
+							<button type="button">VIEW MORE</button>
 						</div>
 					</div>
 					{data[item].map((clientInfo) => (

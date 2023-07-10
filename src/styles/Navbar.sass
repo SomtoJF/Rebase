@@ -11,6 +11,14 @@ nav
     display: flex
     justify-content: space-between
     padding: 2% 5%
+    box-sizing: border-box
+    background: transparent
+    position: absolute
+    color: App.$backgroundColor
+    z-index: 1
+    top: 0px
+    height: 10vh
+    width: 100% 
 
     ul
         display: flex
@@ -31,10 +39,10 @@ nav
             a
                 text-decoration: none
             a.active
-                border-bottom: solid App.$textColor 1px
+                border-bottom: solid App.$backgroundColor 1px
 
         li::after 
-            @include App.underlineAnim
+            @include App.underlineAnim(#f4f4f4)
 
 
         li:hover::after 

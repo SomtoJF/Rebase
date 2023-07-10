@@ -1,9 +1,21 @@
 @use '../App'
 
-#home-page
-    padding: App.$page-padding
+#home-page > header
+    width: 100%
+    height: 80vh
+    display: flex
+    align-items: center
+
+    video
+        width: 100vw
+        height: auto
+
+.mega-text
+    position: absolute
+    color: App.$backgroundColor
 
 #our-jobs
+    padding: App.$page-padding
     margin-bottom: 20vh
     #job-summary
         padding: 0px
@@ -14,6 +26,7 @@
 
         p
             width: 30vw
+            color: App.$backgroundColor
 
         div
             align-self: flex-end
@@ -28,9 +41,10 @@
                 font-size: 15px
                 display: inline-block
                 position: relative
+                color: App.$backgroundColor
 
             button::after
-                @include App.underlineAnim
+                @include App.underlineAnim(#f4f4f4)
 
             button:hover::after
                 @include App.underlineAnimHover

@@ -9,7 +9,6 @@ interface info {
 }
 
 export default function ClientCard({ info }: props) {
-	console.log(info);
 	return (
 		<div className="client-card">
 			<figure>
