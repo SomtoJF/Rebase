@@ -23,7 +23,7 @@ const links: links = {
 export default function Navbar() {
 	return (
 		<nav>
-			<div id="logo">BASIC/DEPT</div>
+			<div className="logo">BASIC/DEPT</div>
 			<ul>
 				{Object.keys(links).map((link, index) => (
 					<li key={index + 0.323}>

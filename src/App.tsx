@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import "./App.sass";
 import Navbar from "./components/Navbar";
 import AccessibilityNewRoundedIcon from "@mui/icons-material/AccessibilityNewRounded";
+import Footer from "./components/Footer";
 
 function App() {
 	return (
@@ -19,6 +20,7 @@ function App() {
 				<button type="button" id="accessibility-button">
 					<AccessibilityNewRoundedIcon />
 				</button>
+				<Footer />
 			</BrowserRouter>
 		</>
 	);

@@ -1,0 +1,96 @@
+@use '../App'
+    
+#footer
+    .logo
+        letter-spacing: initial
+    h3
+        margin: 0px
+    h4:before
+        margin-right: 5px
+        content: '●'
+        font-size: 1.5rem
+    
+    h4
+        margin: 0px
+        font-weight: 400
+
+    box-sizing: border-box
+    width: 100%
+    padding: 10% 5%
+    height: 80vh
+    background-color: App.$textColor
+    color: App.$backgroundColor
+    display: grid
+    column-gap: 10%
+    row-gap: 10vh
+    grid-template-rows: 1fr 1fr
+    grid-template-columns: 1fr 1fr
+
+    p
+        font-size: 1.7rem
+        margin: 0px
+        a
+            color: inherit
+            background-color: inherit
+
+    form
+        display: flex
+        flex-direction: column
+        gap: 10px
+
+
+        input
+            width: 80%
+            outline: none
+            border: none
+            background-color: transparent
+            height: 40px
+            font-size: 1rem
+            color: App.$backgroundColor
+            padding-left: 0px
+            font-weight: 200
+            height: fit-content
+        ::placeholder
+            color: App.$backgroundColor
+
+        button
+            border: none
+            background-color: inherit
+            color: App.$backgroundColor
+
+    form > div
+        display: flex
+        justify-content: space-between
+        border-bottom: 1px solid App.$backgroundColor
+        padding-bottom: 2.5%
+
+    #footer-contact
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        grid-template-rows: 1fr 7fr 
+        row-gap: 20px
+
+        ul
+            margin: 0px
+            padding: 0px
+            li
+                list-style-type: none
+                a
+                    text-decoration: none
+                    font-weight: 200
+                a:hover
+                    text-decoration: underline
+
+#end
+    position: relative
+    left: 0px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    background-color: #191918
+    width: 100%
+    padding: 0px 5%
+    height: 7.5vh
+    font-size: 11px
+    color: #5e5e5e
+    box-sizing: border-box

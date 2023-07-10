@@ -3,6 +3,8 @@ import hipHopimage from "../assets/hiphop.jpeg";
 import patagoniaImage from "../assets/patagonia.jpeg";
 import kfcImage from "../assets/kfc.jpeg";
 import brixtonImage from "../assets/brixton.jpeg";
+import radBikesImage from "../assets/radbikes.jpeg";
+import webbyAwardImage from "../assets/webbyAwards.jpeg";
 
 type jobItem = {
 	name: string;
@@ -20,7 +22,7 @@ const Services: ServicesType = {
 			image: vizioImage,
 		},
 		{
-			name: "b/d jams",
+			name: "b/d® jams",
 			description: "setting the tone every week",
 			image: hipHopimage,
 		},
@@ -30,7 +32,7 @@ const Services: ServicesType = {
 			name: "rad power bikes",
 			description:
 				"an ecommerce experience driven by a sustainability-powered vision.",
-			image: "",
+			image: radBikesImage,
 		},
 		{
 			name: "patagonia",
@@ -63,7 +65,7 @@ const Services: ServicesType = {
 			name: "the webby awards",
 			description:
 				"Establishing a new product strategy and design system for the Internet’s highest honor",
-			image: "",
+			image: webbyAwardImage,
 		},
 	],
 };
