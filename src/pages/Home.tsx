@@ -34,7 +34,7 @@ export default function Home() {
 			</header>
 			<main id="our-jobs">
 				<section id="job-summary">
-					<p style={{ marginTop: "-10%" }}>
+					<p>
 						We work to blur the lines between culture and fashion. Our work
 						stands in the forefront of the fashion industry as we strive to
 						demolish the boundary between what is called normal and not.

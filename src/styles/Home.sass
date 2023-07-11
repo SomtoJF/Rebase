@@ -2,7 +2,7 @@
 
 #home-page > header
     width: 100%
-    height: 80vh
+    height: 100vh
     display: flex
     align-items: center
 
@@ -19,13 +19,15 @@
     padding: App.$page-padding
     margin-bottom: 20vh
     #job-summary
-        padding: 0px
+        padding: App.$page-padding
         display: flex
         flex-direction: row-reverse
         justify-content: space-between
         align-items: center
+        margin-top: 5%
 
         p
+            margin-top: -30% 
             width: 30vw
             color: App.$backgroundColor
 
@@ -42,10 +44,9 @@
                 font-size: 15px
                 display: inline-block
                 position: relative
-                color: App.$backgroundColor
 
             button::after
-                @include App.underlineAnim(#f4f4f4)
+                @include App.underlineAnim
 
             button:hover::after
                 @include App.underlineAnimHover
