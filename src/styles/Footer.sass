@@ -16,13 +16,13 @@
 
     box-sizing: border-box
     width: 100%
-    padding: 10% 5%
-    height: 80vh
+    padding: 5% 5%
+    min-height: 80vh
     background-color: App.$textColor
     color: App.$backgroundColor
     display: grid
-    column-gap: 10%
-    row-gap: 10vh
+    column-gap: 5%
+    row-gap: 2.5%
     grid-template-rows: 1fr 1fr
     grid-template-columns: 1fr 1fr
 
@@ -94,3 +94,15 @@
     font-size: 11px
     color: #5e5e5e
     box-sizing: border-box
+
+@media all and (max-width: 900px)
+    #footer
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        gap: 5vh
+    #footer>p
+        font-size: max(1rem, 2vw)
+
+    #footer-contact
+        font-size: max(12px, 1vw)

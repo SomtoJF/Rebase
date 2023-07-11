@@ -16,7 +16,7 @@ export default function Home() {
 				<video autoPlay loop muted playsInline>
 					<source src={homeVid} type="video/mp4" />
 				</video>
-				<p className="mega-text" style={{ paddingLeft: "5vw" }}>
+				<p className="mega-text" style={{ paddingLeft: "10vw" }}>
 					EASY TO <br /> UNDERSTAND. <br />
 					<div
 						style={{
