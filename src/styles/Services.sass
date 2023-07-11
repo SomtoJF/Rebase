@@ -3,12 +3,20 @@
     .job-section
         min-height: 70vh
         display: grid
-        grid-template-columns: 1fr 1fr 1fr
+        grid-template-columns: 1fr 2fr
         grid-template-rows: 1fr
         justify-content: space-between
         margin-top: 30px
         border-top: solid 1px App.$textColor
         padding-top: 15px
+
+.category-head, .category-items
+    width: 100%
+    height: 100%
+
+.category-head
+    padding: 0px 10px
+    box-sizing: border-box
 
 .item-number-container
     display: flex
@@ -61,8 +69,16 @@
       top: 0
 
 
+.category-items
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-template-rows: 1fr
+    border-left: solid 1px App.$textColor
+    gap: 5%
+
 .client-card
     box-sizing: border-box
+    width: max(28vw, 330px)
     height: 100%
     overflow: hidden
     display: flex
@@ -84,14 +100,31 @@
     div
         padding: 0px 5%
 
-.client-card:nth-child(2)
-    border-left: solid 1px App.$textColor
-
 .client-card:hover figure img
     transform: scale(1.15)
 
 .client-card:hover .info-name
     text-decoration: underline
+
+@media all and (max-width: 1100px) 
+    #our-jobs
+        .job-section
+            display: flex
+            flex-direction: column
+            gap: 20px
+
+        .job-section>*
+            width: 100%
+
+        .category-items
+            border-left: none
+            width: 100%
+            overflow-x: auto
+
+        .client-card > *
+            padding: 0px
+            margin: 0px
+
 
 
         

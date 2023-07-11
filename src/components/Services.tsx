@@ -13,7 +13,7 @@ export default function OurJobsComponent({ data, clientTypes }: props) {
 		<section id="our-jobs">
 			{sectionHeads.map((item, index) => (
 				<div key={index + 0.522} className="job-section">
-					<div>
+					<div className="category-head">
 						<div className="item-number-container">
 							<div>{(index + 1).toString().padStart(2, "0")}</div>
 							<div>{"/" + sectionHeads.length.toString().padStart(2, "0")}</div>
@@ -24,9 +24,11 @@ export default function OurJobsComponent({ data, clientTypes }: props) {
 							<button type="button">VIEW MORE</button>
 						</div>
 					</div>
-					{data[item].map((clientInfo) => (
-						<ClientCard info={clientInfo} />
-					))}
+					<div className="category-items">
+						{data[item].map((clientInfo) => (
+							<ClientCard info={clientInfo} />
+						))}
+					</div>
 				</div>
 			))}
 		</section>
