@@ -7,7 +7,7 @@
     transform: scale(1, .9)
     cursor: pointer
 
-nav
+#main-nav
     display: flex
     justify-content: space-between
     padding: 2% 5%
@@ -57,7 +57,69 @@ nav
         svg:hover
             animation: scale 200ms ease-in-out 0s 1 forwards
 
+    #menu-button
+        display: none
+        background-color: inherit
+        border: none
+        color: App.$backgroundColor
+
 @keyframes scale
     to
         transform: scale(1.2, 1.1)
+
+#nav-overlay
+    box-sizing: border-box
+    display: none
+    opacity: 0
+    flex-direction: column
+    position: fixed
+    top: 0px
+    height: 100vh
+    width: 100vw
+    z-index: 2
+    background-color: App.$textColor
+    color: App.$pink
+    padding: 2.5% 5% 
+
+    ul
+        padding: 0px
+        margin: 0px
+        font-size: 1.2rem
+        font-weight: 500
+        display: flex
+        justify-content: space-between
+        flex-direction: column
+        height: 45%
+        letter-spacing: 3px
+
+        li
+            list-style-type: none
+
+        a
+            text-decoration: none
+        a.active
+            text-decoration: underline
+
+#nav-overlay > div
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 10%
+
+    button
+        background-color: inherit
+        color: white
+        border: none
+    
+    .logo
+        font-size: 1.4rem
+        font-weight: 600
+        letter-spacing: -1px
+
+@media all and (max-width: 800px)
+    #main-nav
+        ul,#more
+            display: none
+        #menu-button
+            display: block
             
