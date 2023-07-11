@@ -27,6 +27,8 @@ export default function Navbar() {
 	const [isOpen, setOpen] = useState(false);
 
 	const handleDrawerOpen = () => {
+		if (isOpen) {
+		}
 		gsap.to("#nav-overlay", {
 			display: "flex",
 			opacity: 1,
