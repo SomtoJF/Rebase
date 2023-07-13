@@ -2,13 +2,14 @@ import { useState } from "react";
 import "../styles/Login.sass";
 import { Link } from "react-router-dom";
 
-export default function Login() {
+export default function Signup() {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [confirmPassword, setConfirmPassword] = useState("");
 	return (
-		<div id="login-page" className="acct-mgmt">
-			<h1>Login</h1>
-			<form action="" id="login-form">
+		<div id="sign-up" className="acct-mgmt">
+			<h1>Sign Up</h1>
+			<form action="" id="signup-form">
 				<input
 					type="email"
 					name="email"
@@ -29,26 +30,22 @@ export default function Login() {
 						setPassword(e.target.value);
 					}}
 				/>
-				<small>
-					<input
-						type="checkbox"
-						name="show password"
-						id="show-password-checkbox"
-						onClick={() => {
-							const x: any = document.getElementById("password");
-							if (x.type === "password") {
-								x.type = "text";
-							} else {
-								x.type = "password";
-							}
-						}}
-					/>
-					Show Password
-				</small>
+
+				<input
+					type="password"
+					name="password-confirmation"
+					id="password-confirmation"
+					placeholder="Confirm Password"
+					value={confirmPassword}
+					onChange={(e) => {
+						setConfirmPassword(e.target.value);
+					}}
+				/>
+
 				<p>
-					Don't have an account? <Link to="/signup">Sign Up</Link>
+					Already have an account? <Link to="/login">Login</Link>
 				</p>
-				<button type="submit">Login</button>
+				<button type="submit">Sign Up</button>
 			</form>
 		</div>
 	);
