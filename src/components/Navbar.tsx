@@ -1,9 +1,10 @@
 import "../styles/Navbar.sass";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import HighlightOffSharpIcon from "@mui/icons-material/HighlightOffSharp";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { gsap } from "gsap";
+import { useAuth } from "../Auth/AuthContext";
 
 interface links {
 	home: string;
@@ -24,6 +25,7 @@ const links: links = {
 };
 
 export default function Navbar() {
+	const { currentUser } = useAuth();
 	const [isOpen, setOpen] = useState(false);
 
 	const handleDrawerOpen = () => {
@@ -52,14 +54,18 @@ export default function Navbar() {
 				<ul>
 					{Object.keys(links).map((link, index) => (
 						<li key={index + 0.323}>
-							<NavLink
-								to={Object.values(links)[index]}
-								className={({ isActive, isPending }) =>
-									isPending ? "pending" : isActive ? "active" : ""
-								}
-							>
-								{link.toUpperCase()}
-							</NavLink>
+							{link === "login" && currentUser ? (
+								<LogoutButton />
+							) : (
+								<NavLink
+									to={Object.values(links)[index]}
+									className={({ isActive, isPending }) =>
+										isPending ? "pending" : isActive ? "active" : ""
+									}
+								>
+									{link.toUpperCase()}
+								</NavLink>
+							)}
 						</li>
 					))}
 				</ul>
@@ -84,14 +90,18 @@ export default function Navbar() {
 				<ul>
 					{Object.keys(links).map((link, index) => (
 						<li key={index + 0.323}>
-							<NavLink
-								to={Object.values(links)[index]}
-								className={({ isActive, isPending }) =>
-									isPending ? "pending" : isActive ? "active" : ""
-								}
-							>
-								{link.toUpperCase()}
-							</NavLink>
+							{link === "login" && currentUser ? (
+								<LogoutButton />
+							) : (
+								<NavLink
+									to={Object.values(links)[index]}
+									className={({ isActive, isPending }) =>
+										isPending ? "pending" : isActive ? "active" : ""
+									}
+								>
+									{link.toUpperCase()}
+								</NavLink>
+							)}
 						</li>
 					))}
 				</ul>
@@ -103,4 +113,18 @@ export default function Navbar() {
 
 export function Logo() {
 	return <div className="logo">RE/BASE</div>;
+}
+
+function LogoutButton() {
+	const { logout } = useAuth();
+	return (
+		<button
+			onClick={() => {
+				logout();
+				useNavigate()("/");
+			}}
+		>
+			LOGOUT
+		</button>
+	);
 }

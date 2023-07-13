@@ -1,14 +1,23 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import "../styles/Login.sass";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../Auth/AuthContext";
 
 export default function Login() {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const { login } = useAuth();
+	const navigate = useNavigate();
+	const handleSubmit = async (e: FormEvent) => {
+		e.preventDefault();
+		const response = await login(email, password);
+		console.log(response);
+		navigate("/");
+	};
 	return (
 		<div id="login-page" className="acct-mgmt">
 			<h1>Login</h1>
-			<form action="" id="login-form">
+			<form action="" onSubmit={handleSubmit} id="login-form">
 				<input
 					type="email"
 					name="email"
