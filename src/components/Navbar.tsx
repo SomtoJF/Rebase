@@ -9,18 +9,18 @@ interface links {
 	home: string;
 	about: string;
 	news: string;
-	thinking: string;
-	career: string;
+	products: string;
+	login: string;
 	contact: string;
 }
 
 const links: links = {
 	home: "/",
-	about: "/about",
+	products: "/products",
 	news: "/news",
-	thinking: "/thinking",
-	career: "/career",
+	about: "/about",
 	contact: "/contact",
+	login: "/login",
 };
 
 export default function Navbar() {
@@ -102,5 +102,5 @@ export default function Navbar() {
 }
 
 function Logo() {
-	return <div className="logo">BASIC/DEPT</div>;
+	return <div className="logo">RE/BASE</div>;
 }

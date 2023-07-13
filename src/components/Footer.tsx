@@ -5,7 +5,7 @@ export default function Footer() {
 	return (
 		<>
 			<footer id="footer">
-				<h3 className="logo">B/D®</h3>
+				<h3 className="logo">R/B®</h3>
 				<p>
 					We collaborate with ambitious brands and people. Let's build.{" "}
 					<a href="mailto:biz@basicagency.com">biz@basicagency.com</a>
@@ -90,7 +90,7 @@ export default function Footer() {
 				</div>
 			</footer>
 			<section id="end">
-				<div>BASIC/DEPT®, INC 10 - 23©</div>
+				<div>RE/BASE®, INC 07 - 23©</div>
 				<div>EASY TO UNDERSTAND, IMPOSSIBLE TO IGNORE.™</div>
 				<div>TERMS, PRIVACY POLICY</div>
 			</section>
