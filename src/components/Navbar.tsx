@@ -101,6 +101,6 @@ export default function Navbar() {
 	);
 }
 
-function Logo() {
+export function Logo() {
 	return <div className="logo">RE/BASE</div>;
 }

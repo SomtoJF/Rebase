@@ -1,0 +1,60 @@
+@use '../App'
+
+#login-page
+    background-color: App.$dark
+    color: App.$light
+    padding: App.$page-padding
+    padding-top: 10vh 
+    min-height: 90vh
+    width: 100%
+    box-sizing: border-box
+    display: flex
+    flex-direction: column
+    gap: 10vh
+    align-items: center
+
+
+    h1
+        padding: 0px
+        margin: 0px
+        align-self: flex-start
+
+    #login-form
+        display: flex
+        flex-direction: column
+        width: max(250px, 50vw)
+        justify-content: space-between
+        height: 30vh
+
+        button[type="submit"]
+            height: 15%
+            width: 50%
+            align-self: center
+            background-color: App.$pink
+            color: App.$dark
+            font-weight: 600
+            border: none
+            border-radius: 20px
+
+        a
+            color: App.$pink
+
+        p
+            font-size: 0.9rem
+    #login-form > input
+        width: 100%
+        height: 15%
+        border-radius: 20px
+        outline: none
+        background-color: inherit
+        border: solid 1px App.$pink
+        padding: 0px 10px
+        color: App.$light
+
+
+    #login-form > *
+        display: block
+
+
+#login-page + footer
+    display: none

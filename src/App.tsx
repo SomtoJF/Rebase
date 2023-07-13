@@ -4,6 +4,7 @@ import "./App.sass";
 import Navbar from "./components/Navbar";
 import AccessibilityNewRoundedIcon from "@mui/icons-material/AccessibilityNewRounded";
 import Footer from "./components/Footer";
+import Login from "./pages/Login";
 
 function App() {
 	return (
@@ -13,8 +14,9 @@ function App() {
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/news" element={<></>} />
-					<Route path="/thinking" element={<></>} />
-					<Route path="/career" element={<></>} />
+					<Route path="/products" element={<></>} />
+					<Route path="/about" element={<></>} />
+					<Route path="/login" element={<Login />} />
 					<Route path="/contact" element={<></>} />
 				</Routes>
 				<button type="button" id="accessibility-button">
