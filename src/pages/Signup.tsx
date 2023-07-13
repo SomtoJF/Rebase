@@ -1,15 +1,33 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import "../styles/Login.sass";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../Auth/AuthContext";
 
 export default function Signup() {
+	const navigate = useNavigate();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
+	const { signup, currentUser } = useAuth();
+
+	const handleSubmit = async (e: FormEvent) => {
+		e.preventDefault();
+		if (password !== confirmPassword) {
+			alert("Passwords do not match");
+			throw new Error("Passwords do not match");
+		}
+		await signup(email, password);
+		console.log(currentUser);
+		setEmail("");
+		setPassword("");
+		setConfirmPassword("");
+		navigate("/login");
+	};
+
 	return (
 		<div id="sign-up" className="acct-mgmt">
 			<h1>Sign Up</h1>
-			<form action="" id="signup-form">
+			<form action="" onSubmit={handleSubmit} id="signup-form">
 				<input
 					type="email"
 					name="email"
@@ -35,7 +53,7 @@ export default function Signup() {
 					type="password"
 					name="password-confirmation"
 					id="password-confirmation"
-					placeholder="Confirm Password"
+					placeholder="Confir m Password"
 					value={confirmPassword}
 					onChange={(e) => {
 						setConfirmPassword(e.target.value);
