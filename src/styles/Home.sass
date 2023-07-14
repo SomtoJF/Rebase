@@ -19,6 +19,8 @@
 #our-jobs
     padding: App.$page-padding
     margin-bottom: 20vh
+    position: relative
+    top: 5vh
     #job-summary
         padding: App.$page-padding
         display: flex
@@ -56,14 +58,11 @@
 
 @media all and (max-width: 830px) 
     #our-jobs > #job-summary
-        padd
         flex-direction: column
         align-items: flex-start
 
         p
-            margin-bottom: 10vh
-            width: max(300px, 50vw)
-            margin-top: -60%
+            display: none
 
         div
             align-self: flex-start
