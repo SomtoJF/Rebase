@@ -37,20 +37,23 @@ export default function Footer() {
 		}
 	}, [changeAccessibility]);
 
+	const handleAccessibilityChange = () => {
+		const accessibilityButton = document.getElementById("accessibility-button");
+		const footer = document.getElementById("footer");
+		const collision = doElsCollide(accessibilityButton, footer);
+		if (changeAccessibility == false && collision == true) {
+			setChangeAccessibility(true);
+		} else {
+			setChangeAccessibility(false);
+		}
+		// console.log(changeAccessibility);
+	};
+
 	useEffect(() => {
-		window.addEventListener("scroll", () => {
-			const accessibilityButton = document.getElementById(
-				"accessibility-button"
-			);
-			const footer = document.getElementById("footer");
-			const collision = doElsCollide(accessibilityButton, footer);
-			if (changeAccessibility == false && collision == true) {
-				setChangeAccessibility(true);
-			} else {
-				setChangeAccessibility(false);
-			}
-			// console.log(changeAccessibility);
-		});
+		window.addEventListener("scroll", handleAccessibilityChange);
+		return () => {
+			window.removeEventListener("scroll", handleAccessibilityChange);
+		};
 	}, []);
 
 	return (
