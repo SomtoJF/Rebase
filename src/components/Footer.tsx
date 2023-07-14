@@ -1,7 +1,58 @@
 import "../styles/Footer.sass";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { useEffect, useState } from "react";
+import { gsap } from "gsap";
 
 export default function Footer() {
+	const [changeAccessibility, setChangeAccessibility] = useState(false);
+	function doElsCollide(
+		element1: HTMLElement | any,
+		element2: HTMLElement | any
+	): boolean {
+		const rect1 = element1.getBoundingClientRect();
+		const rect2 = element2.getBoundingClientRect();
+
+		// Check if the rectangles overlap
+		const overlapX = rect1.left < rect2.right && rect1.right > rect2.left;
+		const overlapY = rect1.top < rect2.bottom && rect1.bottom > rect2.top;
+
+		return overlapX && overlapY;
+	}
+
+	useEffect(() => {
+		const accessibilityButton = document.getElementById("accessibility-button");
+		if (changeAccessibility === true) {
+			gsap.to(accessibilityButton, {
+				color: "#252422",
+				backgroundColor: "#f4f4f4",
+				duration: 1,
+			});
+		}
+		if (changeAccessibility === false) {
+			gsap.to(accessibilityButton, {
+				color: "#f4f4f4",
+				backgroundColor: "#252422",
+				duration: 1,
+			});
+		}
+	}, [changeAccessibility]);
+
+	useEffect(() => {
+		window.addEventListener("scroll", () => {
+			const accessibilityButton = document.getElementById(
+				"accessibility-button"
+			);
+			const footer = document.getElementById("footer");
+			const collision = doElsCollide(accessibilityButton, footer);
+			if (changeAccessibility == false && collision == true) {
+				setChangeAccessibility(true);
+			} else {
+				setChangeAccessibility(false);
+			}
+			// console.log(changeAccessibility);
+		});
+	}, []);
+
 	return (
 		<>
 			<footer id="footer">
