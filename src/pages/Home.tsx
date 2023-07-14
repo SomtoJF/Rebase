@@ -41,7 +41,7 @@ export default function Home() {
 					</p>
 					<div>
 						<button onClick={displayServices}>COLLECTIONS</button>
-						<button>INDUSTRIES</button>
+						<button>SHOWS</button>
 						<button>ALL WORK</button>
 					</div>
 				</section>
