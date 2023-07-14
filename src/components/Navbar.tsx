@@ -55,10 +55,11 @@ export default function Navbar() {
 					{Object.keys(links).map((link, index) => (
 						<li key={index + 0.323}>
 							{link === "login" && currentUser ? (
-								<LogoutButton />
+								<LogoutButton handleDrawerClose={handleDrawerClose} />
 							) : (
 								<NavLink
 									to={Object.values(links)[index]}
+									onClick={handleDrawerClose}
 									className={({ isActive, isPending }) =>
 										isPending ? "pending" : isActive ? "active" : ""
 									}
@@ -91,10 +92,11 @@ export default function Navbar() {
 					{Object.keys(links).map((link, index) => (
 						<li key={index + 0.323}>
 							{link === "login" && currentUser ? (
-								<LogoutButton />
+								<LogoutButton handleDrawerClose={handleDrawerClose} />
 							) : (
 								<NavLink
 									to={Object.values(links)[index]}
+									onClick={handleDrawerClose}
 									className={({ isActive, isPending }) =>
 										isPending ? "pending" : isActive ? "active" : ""
 									}
@@ -115,12 +117,17 @@ export function Logo() {
 	return <div className="logo">RE/BASE</div>;
 }
 
-function LogoutButton() {
+interface logoutButtonProps {
+	handleDrawerClose: () => void;
+}
+
+function LogoutButton({ handleDrawerClose }: logoutButtonProps) {
 	const { logout } = useAuth();
 	return (
 		<button
 			onClick={() => {
 				logout();
+				handleDrawerClose();
 				useNavigate()("/");
 			}}
 		>
