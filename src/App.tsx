@@ -20,6 +20,7 @@ function App() {
 					<Route path="/login" element={<Login />} />
 					<Route path="/contact" element={<></>} />
 					<Route path="/signup" element={<Signup />} />
+					<Route path="/cart" element={<></>} />
 				</Routes>
 				<button type="button" id="accessibility-button">
 					<AccessibilityNewRoundedIcon />

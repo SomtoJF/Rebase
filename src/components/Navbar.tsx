@@ -13,6 +13,7 @@ interface links {
 	products: string;
 	login: string;
 	contact: string;
+	cart: string;
 }
 
 const links: links = {
@@ -21,6 +22,7 @@ const links: links = {
 	news: "/news",
 	about: "/about",
 	contact: "/contact",
+	cart: "/cart",
 	login: "/login",
 };
 
