@@ -17,7 +17,8 @@ export default function Home() {
 					<source src={homeVid} type="video/mp4" />
 				</video>
 				<p className="mega-text" style={{ paddingLeft: "10vw" }}>
-					EASY TO <br /> UNDERSTAND. <br />
+					IMAGINE THE
+					<br /> IMPOSSIBLE, <br />
 					<div
 						style={{
 							backgroundColor: "#f4f4f4",
@@ -28,8 +29,9 @@ export default function Home() {
 						}}
 					></div>{" "}
 					{"      "}
-					IMPOSSIBLE <br />
-					TO IGNORE.
+					SEE ALL
+					<br />
+					POSSIBILITIES.
 				</p>
 			</header>
 			<main id="our-jobs">

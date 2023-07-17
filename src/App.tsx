@@ -6,6 +6,7 @@ import AccessibilityNewRoundedIcon from "@mui/icons-material/AccessibilityNewRou
 import Footer from "./components/Footer";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Products from "./pages/Products";
 
 function App() {
 	return (
@@ -15,7 +16,7 @@ function App() {
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/news" element={<></>} />
-					<Route path="/products" element={<></>} />
+					<Route path="/products" element={<Products />} />
 					<Route path="/about" element={<></>} />
 					<Route path="/login" element={<Login />} />
 					<Route path="/contact" element={<></>} />

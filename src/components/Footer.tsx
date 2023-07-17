@@ -62,7 +62,7 @@ export default function Footer() {
 				<h3 className="logo">R/B®</h3>
 				<p>
 					We collaborate with ambitious brands and people. Let's build.{" "}
-					<a href="mailto:biz@basicagency.com">biz@basicagency.com</a>
+					<a href="mailto:biz@culturalrebase.com">biz@culturalrebase.com</a>
 				</p>
 				<form action="" onSubmit={(e) => e.preventDefault()}>
 					<h4>
