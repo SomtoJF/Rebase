@@ -13,8 +13,7 @@ interface postPayloadInterface {
 const getAllproducts = async () => {
 	try {
 		let response = await axios.get(endpoint + "products");
-		console.log(response);
-		return response;
+		return response.data.body;
 	} catch (err: any) {
 		throw new Error(err);
 	}

@@ -1,0 +1,67 @@
+@use '../App'
+
+#products-page
+    width: 100%
+    min-height: 100vh
+    padding: App.$page-padding
+    box-sizing: border-box
+    section
+        display: flex
+        justify-content: space-between
+        align-items: center
+        width: 100%
+        border-bottom: solid 1px App.$textColor
+        padding: 5px 0px
+        padding-top: 10vh
+
+        h1
+            font-weight: 500
+            font-size: 2rem
+            margin: 0px
+            padding: 0px
+
+        form
+            display: flex
+            justify-content: center
+            align-items: center
+            width: max(30vw, 150px)
+            position: relative
+            right: 50%
+            margin-right: calc( -0.5 * max(30vw, 150px))
+            input
+                width: 1px
+                background: none
+                border: none
+                outline: none
+                transition: 1s
+            button
+                background: transparent
+                border: none
+
+#menubar
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-top: 15px
+    .alter
+        display: flex
+        justify-content: space-between
+        align-items: center
+        font-size: 0.9rem
+        color: #646362
+        cursor: pointer
+
+        button
+            border: none
+            background: transparent
+            display: flex
+            align-items: center
+
+#products-section
+    margin-top: 15px
+    display: grid
+    grid-template-columns: repeat(auto-fill, max(200px, 25vw))
+    grid-template-rows: 400px
+    grid-auto-rows: 400px
+    column-gap: 5%
+    justify-content: center
