@@ -16,19 +16,10 @@ export default function Home() {
 				<video autoPlay loop muted playsInline>
 					<source src={homeVid} type="video/mp4" />
 				</video>
-				<p className="mega-text" style={{ paddingLeft: "10vw" }}>
+				<p className="mega-text">
 					IMAGINE THE
 					<br /> IMPOSSIBLE, <br />
-					<div
-						style={{
-							backgroundColor: "#f4f4f4",
-							height: "max(38px, 4vw)",
-							width: "max(38px, 4vw)",
-							borderRadius: "100%",
-							display: "inline-block",
-						}}
-					></div>{" "}
-					{"      "}
+					<p id="circle"></p> {"      "}
 					SEE ALL
 					<br />
 					POSSIBILITIES.
