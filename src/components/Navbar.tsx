@@ -5,6 +5,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { gsap } from "gsap";
 import { useAuth } from "../Auth/AuthContext";
+import MenuIcon from "@mui/icons-material/Menu";
 
 interface links {
 	home: string;
@@ -76,7 +77,12 @@ export default function Navbar() {
 					<MoreHorizIcon />
 				</div>
 				<button type="button" id="menu-button" onClick={handleDrawerOpen}>
-					MENU
+					<MenuIcon
+						style={{
+							color:
+								window.location.pathname === "/products" ? "black" : "white",
+						}}
+					/>
 				</button>
 			</nav>
 			<aside id="nav-overlay">
