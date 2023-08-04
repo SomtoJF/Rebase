@@ -13,7 +13,6 @@ export default function Products() {
 	const [displayedProducts, setDisplayedProducts] = useState<
 		postPayloadInterface[]
 	>(products as postPayloadInterface[]);
-	const [categories, setCategories] = useState<string[]>([]);
 	const [loading, setLoading] = useState<boolean>(true);
 
 	const darkNav = () => {
@@ -48,19 +47,6 @@ export default function Products() {
 			searchInput.style.borderBottom = "none";
 		}
 	}
-
-	function getUniqueElements<T>(arr: T[]): T[] {
-		const uniqueSet = new Set<T>(arr);
-		const uniqueArray = Array.from(uniqueSet);
-		return uniqueArray;
-	}
-
-	useEffect(() => {
-		const uniqueCategories = getUniqueElements(
-			displayedProducts.map((products) => products.category)
-		);
-		setCategories(uniqueCategories);
-	}, [displayedProducts]);
 
 	return (
 		<div id="products-page">
