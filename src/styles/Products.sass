@@ -143,6 +143,7 @@
             box-sizing: border-box
             height: fit-content
             width: fit-content
+            font-size: 0.5rem
         button
             justify-self: center
             grid-row: 2/4
@@ -184,4 +185,8 @@
 
     #products-section
         grid-template-columns: repeat(auto-fill, max(250px, 25vw))
+
+@media all and (max-width:850px)
+    #search-panel 
+        width: max(60vw, 350px)
 

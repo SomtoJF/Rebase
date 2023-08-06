@@ -1,5 +1,5 @@
 import Modal from "@mui/material/Modal";
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import { postPayloadInterface } from "../Services/Products";
 import Fuse from "fuse.js";
 import searchIllustration from "../assets/search.svg";
@@ -24,6 +24,11 @@ export default function SearchModal({
 }: props) {
 	const [input, setInput] = useState("");
 	const [searchResults, setSearchResults] = useState<any[]>([]);
+	const elementRef = useRef<HTMLInputElement>(null);
+
+	useEffect(() => {
+		if (openModal === true && elementRef.current) elementRef.current.focus();
+	}, [openModal]);
 
 	const fuse = new Fuse(products, options);
 
@@ -54,6 +59,7 @@ export default function SearchModal({
 						placeholder="Search by Name or Category"
 						value={input}
 						onChange={(e) => setInput(e.target.value)}
+						ref={elementRef}
 					/>
 					<button type="submit" onClick={handleSubmit}>
 						Go
