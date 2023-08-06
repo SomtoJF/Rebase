@@ -60,7 +60,7 @@ export default function SearchModal({
 					</button>
 				</form>
 				<div id="results-container">
-					{input === "" ? (
+					{input === "" || searchResults.length < 1 ? (
 						<img
 							src={searchIllustration}
 							id="search-illustration"
