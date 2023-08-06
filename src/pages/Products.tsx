@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getAllproducts } from "../Services/Products";
 import "../styles/Products.sass";
 import { gsap } from "gsap";
@@ -6,6 +6,8 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { postPayloadInterface } from "../Services/Products";
 import ProductItem from "../components/ProductItem";
 import { Skeleton } from "@mui/material";
+import SearchModal from "../components/SearchModal";
+
 export default function Products() {
 	const [products, setproducts] = useState<postPayloadInterface[]>(
 		[] as postPayloadInterface[]
@@ -14,6 +16,7 @@ export default function Products() {
 		postPayloadInterface[]
 	>(products as postPayloadInterface[]);
 	const [loading, setLoading] = useState<boolean>(true);
+	const [openModal, setOpenModal] = useState(false);
 
 	const darkNav = () => {
 		gsap.to("#main-nav", {
@@ -35,35 +38,24 @@ export default function Products() {
 		};
 	}, []);
 
-	function handleSearch(e: FormEvent) {
-		e.preventDefault();
-		const searchInput: any = document.getElementById("search-input");
-		if (searchInput.value === "") {
-			searchInput.style.width = "200px";
-			searchInput.style.borderBottom = "solid 1px black";
-		} else {
-			searchInput.style.width = "1px";
-			searchInput.value = "";
-			searchInput.style.borderBottom = "none";
-		}
-	}
-
 	return (
 		<div id="products-page">
 			<section>
 				<h1>Products</h1>
-				<form action="" onSubmit={handleSearch}>
-					<input
-						type="text"
-						name="search"
-						id="search-input"
-						placeholder="Search..."
-					/>
-					<button type="submit">
-						<SearchOutlinedIcon sx={{ fontSize: 20 }} />
-					</button>
-				</form>
+				<button
+					type="button"
+					onClick={() => setOpenModal(true)}
+					className="openModal"
+				>
+					<SearchOutlinedIcon sx={{ fontSize: 20 }} />
+				</button>
 			</section>
+
+			<SearchModal
+				products={products}
+				openModal={openModal}
+				setOpenModal={setOpenModal}
+			/>
 
 			{loading && (
 				<main id="products-section">
