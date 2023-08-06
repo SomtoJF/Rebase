@@ -21,23 +21,20 @@
             margin: 0px
             padding: 0px
 
-        form
+        button.openModal
+            background: App.$textColor
+            color: App.$backgroundColor
+            border-radius: 50%
+            width: 40px
+            height: 40px
+            border: none
             display: flex
-            justify-content: space-between
+            justify-content: center
             align-items: center
-            width: max-content
-            position: relative
-            gap: 10px
-            
-            input
-                width: 1px
-                background: none
-                border: none
-                outline: none
-                transition: 1s
-            button
-                background: transparent
-                border: none
+
+            svg
+                padding: 0px
+                margin: 0px
 
 #menubar
     display: flex
@@ -58,38 +55,138 @@
             display: flex
             align-items: center
 
-.filter-sort-container
-    background-color: white
-    list-style-type: none
-    padding: 0px
-    width: max(100px, 20vw)
+#search-panel
+    background-color: App.$backgroundColor
+    width: max(40vw, 350px)
+    border-radius: 10px
+    height: 50vh
+    box-sizing: border-box
+    padding: 2%
+    display: grid
+    grid-template-rows: 1fr 9fr
+    gap: 20px
+
+    form
+        width: 100%
+        display: flex
+        justify-content: space-between
+
+        input
+            width: 75%
+            height: 30px
+
+        button[type="submit"]
+            width: 20%
+            background-color: App.$textColor
+            color: App.$backgroundColor
+            border: none
+            border-radius: 5px
+            font-weight: 700
+
+        button[type="submit"]:active
+            color: App.$pink
+
+#results-container
+    width: 100%
+    height: 100%
     display: flex
     flex-direction: column
     justify-content: flex-start
-    margin: 0px
-    height: max-content
-    box-sizing: border-box
-    position: absolute
-    border-radius: 10px
-    box-shadow: 0px 1px 2px rgba(0,0 ,0 ,0.25 ) 
-    z-index: 3
-    overflow: hidden
-    top: 250px
+    gap: 10px
+    align-items: center
+    overflow-y: auto
+    font-size: 0.7rem
 
-    li
-        height: 30px
+    article
         width: 100%
-        padding: 5% 10%
-        cursor: pointer
-    li:not(:last-child)
-        border-bottom: solid 1px #e4e4e4
+        height: 30%
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        grid-auto-rows: repeat(3, 1fr)
+        column-gap: 10px
+        row-gap: 5px
+
+        .search-result.figure
+            grid-row: 1/4
+            background-color: white
+            width: 100%
+            height: 100%
+            overflow: hidden
+            margin: 0px
+            padding: 0px
+            display: flex
+            justify-content: center
+            align-items: center
+
+            img
+                height: 100%
+
+        .search-result.name
+            width: 100%
+            white-space: nowrap
+            text-overflow: ellipsis
+            overflow: hidden
+            grid-column: 2/4
+
+        .search-result.price
+            grid-column: 2/3
+            font-weight: 700
+            height: fit-content
+            align-self: center
+    
+        .search-result.category
+            grid-column: 2/3
+            border: solid 1px #a7a6a5
+            color: #a7a6a5
+            border-radius: 15px
+            padding: 2px 5px
+            box-sizing: border-box
+            height: fit-content
+            width: fit-content
+            font-size: 0.5rem
+        button
+            justify-self: center
+            grid-row: 2/4
+            grid-column: 3/4
+            width: max(30%, 50px)
+            height: max-content
+            border: none
+            color: App.$backgroundColor
+            background-color: App.$textColor
+            border-radius: 5px
+            padding: 5px
+            align-self: center
+
+    hr
+        background-color: App.$textColor
+        color: App.$textColor
+        height: 3px
+        width: 100%
+
+
+#search-illustration
+    width: 50%
+    height: auto
+    position: relative
+    top: 15%
 
 #products-section
     margin-top: 15px
     display: grid
-    grid-template-columns: repeat(auto-fill, max(250px, 25vw))
+    grid-template-columns: repeat(auto-fill, max(350px, 25vw))
     grid-template-rows: 400px
     grid-auto-rows: 400px
     column-gap: 5%
     justify-content: center
+
+@media all and (max-width:300px) 
+    #search-panel
+        width: 250px
+
+    #products-section
+        grid-template-columns: repeat(auto-fill, max(250px, 25vw))
+
+@media all and (max-width:850px)
+    #search-panel 
+        width: max(60vw, 350px)
 
