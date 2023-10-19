@@ -7,12 +7,15 @@ import Footer from "./components/Footer";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Products from "./pages/Products";
+import Product from "./pages/Product";
+import AuthMessageCard from "./components/AuthMessageCard";
 
 function App() {
 	return (
 		<>
 			<BrowserRouter>
 				<Navbar />
+				<AuthMessageCard />
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/news" element={<></>} />
@@ -22,6 +25,7 @@ function App() {
 					<Route path="/contact" element={<></>} />
 					<Route path="/signup" element={<Signup />} />
 					<Route path="/cart" element={<></>} />
+					<Route path="/products/:id" element={<Product />} />
 				</Routes>
 				<button type="button" id="accessibility-button">
 					<AccessibilityNewRoundedIcon />

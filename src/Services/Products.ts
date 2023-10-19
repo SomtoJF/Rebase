@@ -19,6 +19,20 @@ const getAllproducts = async () => {
 	}
 };
 
+const getProduct = async (id: any): Promise<postPayloadInterface> => {
+	try {
+		let response = await axios.get(endpoint + `products/${id}`, {
+			params: {
+				id: id,
+			},
+		});
+		return response.data.body;
+	} catch (err: any) {
+		console.log(err);
+		throw new Error(err);
+	}
+};
+
 const postProduct = async (params: postPayloadInterface) => {
 	try {
 		let response = await axios.post(endpoint + "products", {
@@ -30,5 +44,5 @@ const postProduct = async (params: postPayloadInterface) => {
 	}
 };
 
-export { getAllproducts, postProduct };
+export { getAllproducts, postProduct, getProduct };
 export type { postPayloadInterface };

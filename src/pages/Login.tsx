@@ -7,12 +7,19 @@ export default function Login() {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const { login } = useAuth();
+	const [requestIsLoading, setRequestIsLoading] = useState(false);
 	const navigate = useNavigate();
 	const handleSubmit = async (e: FormEvent) => {
 		e.preventDefault();
-		const response = await login(email, password);
-		console.log(response);
-		navigate("/");
+		setRequestIsLoading(true);
+		try {
+			const response = await login(email, password);
+			console.log(response);
+			navigate("/");
+		} catch (err) {
+			console.log(err);
+		}
+		setRequestIsLoading(false);
 	};
 	return (
 		<div id="login-page" className="acct-mgmt">
@@ -57,7 +64,17 @@ export default function Login() {
 				<p>
 					Don't have an account? <Link to="/signup">Sign Up</Link>
 				</p>
-				<button type="submit">Login</button>
+				<button
+					type="submit"
+					disabled={requestIsLoading}
+					style={{
+						justifyContent: "center",
+						alignItems: "center",
+						display: "flex",
+					}}
+				>
+					Login
+				</button>
 			</form>
 		</div>
 	);
