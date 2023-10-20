@@ -1,6 +1,7 @@
 import ClientCard from "./ClientCard";
 import { ServicesType, clientType } from "../Types/Home";
 import "../styles/Services.sass";
+import { v4 as uuidv4 } from "uuid";
 
 type props = {
 	data: ServicesType;
@@ -26,7 +27,7 @@ export default function OurJobsComponent({ data, clientTypes }: props) {
 					</div>
 					<div className="category-items">
 						{data[item].map((clientInfo) => (
-							<ClientCard info={clientInfo} />
+							<ClientCard info={clientInfo} key={uuidv4()} />
 						))}
 					</div>
 				</div>
