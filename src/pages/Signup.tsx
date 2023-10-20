@@ -2,13 +2,14 @@ import { FormEvent, useState } from "react";
 import "../styles/Login.sass";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../Auth/AuthContext";
+import { postNewCart } from "../Services/UserData";
 
 export default function Signup() {
 	const navigate = useNavigate();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
-	const { signup, currentUser } = useAuth();
+	const { signup } = useAuth();
 
 	const handleSubmit = async (e: FormEvent) => {
 		e.preventDefault();
@@ -16,12 +17,17 @@ export default function Signup() {
 			alert("Passwords do not match");
 			throw new Error("Passwords do not match");
 		}
-		await signup(email, password);
-		console.log(currentUser);
-		setEmail("");
-		setPassword("");
-		setConfirmPassword("");
-		navigate("/login");
+		try {
+			const response = await signup(email, password);
+			const { uid } = response;
+			postNewCart({ userid: uid, cart: "", totalPrice: 0 });
+			setEmail("");
+			setPassword("");
+			setConfirmPassword("");
+			navigate("/login");
+		} catch (err: any) {
+			throw new Error(err);
+		}
 	};
 
 	return (
