@@ -20,7 +20,7 @@ export default function Signup() {
 		try {
 			const response = await signup(email, password);
 			const { uid } = response;
-			postNewCart({ userid: uid, cart: "", totalPrice: 0 });
+			postNewCart({ userid: uid, cart: "[{}]", totalPrice: 0 });
 			setEmail("");
 			setPassword("");
 			setConfirmPassword("");

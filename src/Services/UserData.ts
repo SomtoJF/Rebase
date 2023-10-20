@@ -11,7 +11,7 @@ type cartItem = {
 
 interface CartPayload {
 	userid: string;
-	cart: "" | cartItem[];
+	cart: "[{}]" | cartItem[];
 	totalPrice: number;
 }
 
