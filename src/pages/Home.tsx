@@ -13,7 +13,13 @@ export default function Home() {
 	return (
 		<section id="home-page">
 			<header>
-				<video autoPlay loop muted playsInline>
+				<video
+					autoPlay
+					loop
+					muted
+					playsInline
+					poster="../assets/home-video-poster.png"
+				>
 					<source src={homeVid} type="video/mp4" />
 				</video>
 				<p className="mega-text">
