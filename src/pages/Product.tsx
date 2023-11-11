@@ -7,6 +7,7 @@ export default function Product() {
 	let { id } = useParams();
 	useEffect(() => {
 		getProduct(id).then((item) => setProduct(item));
+		console.log(product);
 	}, []);
 	return <div>Product</div>;
 }
