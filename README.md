@@ -22,4 +22,4 @@ Contributions, Issues and feature requests are very much welcome! However, in or
 
 - [Landing Page Video](https://cdn.sanity.io/files/8nn8fua5/production/4c749533161fc77c899a376ec6cd6da38973772f.mp4)
 
-[View Deployed Site](https://basic-dept-3yic.vercel.app/)
+[View Deployed Site](https://basic-dept-wine.vercel.app/)
